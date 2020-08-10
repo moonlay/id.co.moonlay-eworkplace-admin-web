@@ -182,7 +182,7 @@ export default {
       children: [
         {
           name: 'Add Account',
-          url: '/account/addaccount',
+          url: '/caccount/caccounts',
           icon: 'icon-star',
         },
         {
@@ -190,6 +190,18 @@ export default {
           url: '/account/listaccount',
           icon: 'icon-star',
         },
+        {
+          name: 'Payroll Info',
+          url: '/payroll/payrollinfo',
+          icon: 'icon-star',
+        },
+        {
+          name: 'Assets',
+          url: '/assets/asset',
+          icon: 'icon-star',
+        },
+
+
       ],
     },
     {
@@ -218,6 +230,20 @@ export default {
         text: 'NEW',
       },
     },
+  //  {
+   //   name: 'Coba',
+  // url: '/Coba/Coba',
+  //    icon: 'icon-calculator',
+   //   badge: {
+    //    variant: 'info',
+     //   text: 'NEW',
+    //  },
+   // },
+
+    
+
+
+
     // {
     //   divider: true,
     // },

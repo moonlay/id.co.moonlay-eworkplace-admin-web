@@ -26,7 +26,9 @@ $ npm start
 ## Features
 * Admin can create, read, update, delete attandance
 * Admin can create, read, delete role
-* Admin can create, read, delete account
+* Admin can create, read, update, delete account
+* Admin can create, read, update, delete asset
+* Admin can create, read, update, delete payroll
 * Admin can create, read division
 * Admin can create, read job title
 * Admin can upload image to blobstorage
