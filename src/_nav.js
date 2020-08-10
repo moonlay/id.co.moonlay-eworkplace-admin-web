@@ -218,6 +218,22 @@ export default {
         text: 'NEW',
       },
     },
+    {
+      name: 'List Timesheet',
+      url: '#',
+      icon: 'cui-list',
+      children:[
+        {
+          name: 'ReportTimeSheet',
+          url: '/TimeSheet/Report',
+          icon: 'cui-list',
+          badge:{
+            variant: 'info',
+            text: 'NEW'
+          },
+        },
+      ]
+    }
     // {
     //   divider: true,
     // },

@@ -16,39 +16,40 @@ import {
   AppSidebarNav2 as AppSidebarNav,
 } from '@coreui/react';
 // sidebar nav config
-import navigation from '../../../_nav';
+import navigation from '../../../../_nav';
 // routes config
-import routes from '../../../routes';
+import routes from '../../../../routes';
 
 const DefaultAside = React.lazy(() =>
-  import('../../../containers/DefaultLayout/DefaultAside')
+  import('../../../../containers/DefaultLayout/DefaultAside')
 );
 const DefaultFooter = React.lazy(() =>
-  import('../../../containers/DefaultLayout/DefaultFooter')
+  import('../../../../containers/DefaultLayout/DefaultFooter')
 );
 const DefaultHeader = React.lazy(() =>
-  import('../../../containers/DefaultLayout/DefaultHeader')
+  import('../../../../containers/DefaultLayout/DefaultHeader')
 );
 
-class ListDivision extends Component {
-  loading = () => (
-    <div className="animated fadeIn pt-1 text-center">Loading...</div>
+class Report extends Component{
+    loading = () => (
+        <div className="animated fadeIn pt-1 text-center">Loading...</div>
+      );
     
-  );
-
-  signOut(e) {
-    e.preventDefault();
-    this.props.history.push('/login');
-  }
-
-  render() {
-    var token = localStorage.getItem('token');
-    var RoleId = localStorage.getItem('RoleId')
-    if (token === null || token === undefined ||RoleId === null || RoleId === undefined) {
-      this.props.history.push('/login');
+    signOut(e) {
+        e.preventDefault();
+        this.props.history.push('/login');
+      }
+    componentWillMount(){
+      return true;
     }
-    return (
-      <div className="app">
+    render(){
+        var token = localStorage.getItem('token');
+        var RoleId = localStorage.getItem('RoleId')
+        if (token === null || token === undefined ||RoleId === null || RoleId === undefined) {
+          this.props.history.push('/login');
+        }
+        return(
+            <div className="app">
         <AppHeader fixed>
           <Suspense fallback={this.loading()}>
             <DefaultHeader onLogout={e => this.signOut(e)} />
@@ -102,9 +103,8 @@ class ListDivision extends Component {
             <DefaultFooter />
           </Suspense>
         </AppFooter>
-      </div>
-    );
-  }
+            </div>
+        )
+    }
 }
-
-export default ListDivision;
+export default Report;

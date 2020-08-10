@@ -30,25 +30,24 @@ const DefaultHeader = React.lazy(() =>
   import('../../../containers/DefaultLayout/DefaultHeader')
 );
 
-class ListDivision extends Component {
-  loading = () => (
-    <div className="animated fadeIn pt-1 text-center">Loading...</div>
+class ProjectList extends Component{
+    loading = () => (
+        <div className="animated fadeIn pt-1 text-center">Loading...</div>
+      );
     
-  );
-
-  signOut(e) {
-    e.preventDefault();
-    this.props.history.push('/login');
-  }
-
-  render() {
-    var token = localStorage.getItem('token');
-    var RoleId = localStorage.getItem('RoleId')
-    if (token === null || token === undefined ||RoleId === null || RoleId === undefined) {
-      this.props.history.push('/login');
-    }
-    return (
-      <div className="app">
+    signOut(e) {
+        e.preventDefault();
+        this.props.history.push('/login');
+      }
+    
+    render(){
+        var token = localStorage.getItem('token');
+        var RoleId = localStorage.getItem('RoleId')
+        if (token === null || token === undefined ||RoleId === null || RoleId === undefined) {
+          this.props.history.push('/login');
+        }
+        return(
+            <div className="app">
         <AppHeader fixed>
           <Suspense fallback={this.loading()}>
             <DefaultHeader onLogout={e => this.signOut(e)} />
@@ -102,9 +101,8 @@ class ListDivision extends Component {
             <DefaultFooter />
           </Suspense>
         </AppFooter>
-      </div>
-    );
-  }
+            </div>
+        )
+    }
 }
-
-export default ListDivision;
+export default ProjectList;

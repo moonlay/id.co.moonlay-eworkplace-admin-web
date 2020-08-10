@@ -1,4 +1,5 @@
 import React, { Component} from 'react';
+import DatePicker from 'reactstrap-date-picker'
 import {
   Card,
   CardBody,
@@ -15,6 +16,7 @@ import $ from 'jquery';
 import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Select from 'react-select';
+import Link from 'react-router-dom'
 import {urlJobtitle, urlDivision, urlBlob, urlRole} from '../../../Constant'
 //const $ = require('jquery');
 const moment = require('moment');
@@ -32,11 +34,11 @@ class Tables extends Component {
       rangePicker: {},
       show : false,
       selectedDivision :{},
-      stream : null
+      stream : null,
+      value: new Date().toISOString(),
     };
     this.handleClick = this.handleClick.bind(this);
   }
-
   handleClick(event) {
     this.setState({
       currentPage: Number(event.target.id),
@@ -132,6 +134,10 @@ class Tables extends Component {
    // $('#datefilterfrom').on("change", filterRows);
    // $('#datefilterto').on("change", filterRows);
  // };
+}
+handleDate =(e,v)=>{
+  console.log(e);
+  console.log(v);
 }
   componentDidMount() {
     this.handleGetDivision();
@@ -342,12 +348,15 @@ class Tables extends Component {
           <Input type="text" onChange={this.handleDescription} placeholder="Description" autoComplete="Name" />
           </InputGroup>
 
-          Division
+          Division  
           <Select style={{width:70}}
                       name="form-field-name"
                       value={this.state.selectedivision}
                       onChange={this.handleDivision}
-                      options={options} />
+                      options={options} 
+                      defaultInputValue = "Loyalti"/>
+          Date
+          <DatePicker dateFormat = "YYYY/MM/DD" onChange={(e,v)=>this.handleDate(e,v)}/>
           </Form>
           </Modal.Body>
 					<Modal.Footer>
@@ -359,34 +368,6 @@ class Tables extends Component {
             </Button>
 					</Modal.Footer>
 				</Modal>
-
-
-        
-        <div className="row">
-          {/* <div class="col-md-3">
-            <h4>Date from</h4>
-            <input
-              type="date"
-              class="form-control"
-              id="datefilterfrom"
-              data-date-split-input="true"
-              onChange={this.handleDateChange}
-            />
-          </div> */}
-          {/* <div class="col-md-3">
-            <h4>Date to</h4>
-            <input
-              type="date"
-              class="form-control"
-              id="datefilterto"
-              data-date-split-input="true"
-            />
-          </div> */}
-          {/* <div>
-            <h4>Date to</h4>
-            <button onClick={this.handleJS}>filter date</button>
-          </div> */}
-        </div>
 
         <div className="animated fadeIn">
           {this.state.loading && (
