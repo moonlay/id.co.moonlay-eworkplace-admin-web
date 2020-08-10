@@ -1,1 +1,25 @@
 // Here you can add other styles
+.auto{
+    display:block;
+    border: 0px solid red;
+    padding:5px;
+    margin-top:5px;
+    widows: 50rem;;
+    height:611px;
+    overflow:auto;
+ }
+
+ .kanan {
+    float: right;
+    margin-top: -15px;
+    }
+    
+    .clr {
+    
+    clear: both;
+    
+    }
+
+    .font {
+       width: '80%';
+    }

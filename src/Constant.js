@@ -9,6 +9,14 @@ export const urlJobtitle = 'https://eworkmoonlay-core-dev.azurewebsites.net/v1/j
 export const urlRole = 'https://eworkmoonlay-user-dev.azurewebsites.net/v1/roles';
 export const urlMe = 'https://eworkmoonlay-user-dev.azurewebsites.net/v1/me'
 
+export const urlFamilyData = 'https://3ed9343cd161.ngrok.io/v1/familydata';
+export const urlContact = 'https://3ed9343cd161.ngrok.io/v1/familydata/emergencyContact';
+export const urlInformalEducationData = 'https://3ed9343cd161.ngrok.io/v1/informaleducation';
+export const urlWorkingExperienceData = 'https://3ed9343cd161.ngrok.io/v1/workingExperience';
+export const urlAssets = 'https://3ed9343cd161.ngrok.io/v1/assets';
+export const urlPayroll = 'https://3ed9343cd161.ngrok.io/v1/payroll';
+export const urlAccountInformation = 'https://3ed9343cd161.ngrok.io/v1/accountinformation';
+
   export const appovedList = [
     { value: 'Pending', label: 'Pending' },
     { value: 'Approved', label: 'Approved' },

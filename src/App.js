@@ -27,6 +27,12 @@ const ListDivision = React.lazy(() => import('./views/Pages/Division/ListDivisio
 const ListJobtitle = React.lazy(() => import('./views/Pages/Jobtitle/ListJobtitle'));
 const ListRole = React.lazy(() => import('./views/Pages/Role/ListRole'));
 const TestLur = React.lazy(() => import('./views/Pages/Test/index'));
+const Details = React.lazy(() => import('./views/Pages/Details/details'));
+const Edit = React.lazy(() => import('./views/Pages/Edit/editacc'));
+const CAccount = React.lazy(() => import('./views/Pages/CAccount/CAccount'));
+const Payroll = React.lazy(() => import('./views/Pages/Payroll/ListPayroll'));
+const Assets = React.lazy(() => import('./views/Pages/Assets/Asset'));
+
 
 class App extends Component {
 
@@ -44,6 +50,14 @@ class App extends Component {
             <Route exact path="/absensi/belumabsen" name="Edit Account Page" render={props => <ListBelomAbsen {...props}/>} />
             <Route exact path="/absensi/atoffice" name="Edit Account Page" render={props => <ListAtOffice {...props}/>} />
             <Route exact path="/absensi/approval" name="Edit Account Page" render={props => <ListApproval {...props}/>} />
+            <Route exact path="/details/detailsacc" name="Details Page" render={props => <Details {...props}/>} />
+            <Route exact path="/edit/editacc" name="Edit Page" render={props => <Edit {...props}/>} />
+            <Route exact path="/caccount/caccounts" name="CAccount Page" render={props => <CAccount {...props}/>} />
+            <Route exact path="/payroll/payrollinfo" name="Payroll Page" render={props => <Payroll {...props}/>} />
+            <Route exact path="/assets/asset" name="Assets Page" render={props => <Assets {...props}/>} />
+            <Route path="/account/detailaccount/:id" render={props => <Details {...props}/> } />
+            <Route path="/account/editaccount/:id" render={props => <Edit {...props}/> } />
+            
             
             <Route exact path="/division/listdivision" name="List Division Page" render={props => <ListDivision {...props}/>} />
             <Route exact path="/jobtitle/listjobtitle" name="List Division Page" render={props => <ListJobtitle {...props}/>} />
