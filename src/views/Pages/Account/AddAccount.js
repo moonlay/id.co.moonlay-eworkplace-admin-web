@@ -122,20 +122,20 @@ class AddAccount extends Component {
                   }
                 ],
               }
-
-              axios({
-                method: 'post',
-                url: urlUser,
-                headers: headerlur,
-                data: Data,
-              })
-              .then(data => {
-                alert("berhasil");
-               window.location.reload();
-              })
-              .catch(err => {
-               alert("ERROR" + err)
-              });  
+              console.log(Data);
+              // axios({
+              //   method: 'post',
+              //   url: urlUser,
+              //   headers: headerlur,
+              //   data: Data,
+              // })
+              // .then(data => {
+              //   alert("berhasil");
+              //  window.location.reload();
+              // })
+              // .catch(err => {
+              //  alert("ERROR" + err)
+              // });  
             }
           )
           .catch(err => {

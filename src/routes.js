@@ -36,10 +36,11 @@ const Widgets = React.lazy(() => import('./views/Widgets/Widgets'));
 const Users = React.lazy(() => import('./views/Users/Users'));
 const User = React.lazy(() => import('./views/Users/User'));
 const listUser = React.lazy(() => import ('./views/Pages/Account/ListAccount'));
-
+const Report = React.lazy(()=>import('./views/Pages/TimeSheet/Dashboard/Report'));
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
   { path: '/', exact: true, name: 'Home' },
+  {path:'/TimeSheet/Report' ,exact:true,name:'Report',Component:Report},
  // { path: '/account/lis', name: 'Home',  component : listUser},
  // { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   { path: '/theme', exact: true, name: 'Theme', component: Colors },

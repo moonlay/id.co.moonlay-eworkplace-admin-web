@@ -1,4 +1,5 @@
 import React, { Component} from 'react';
+import DatePicker from 'reactstrap-date-picker';
 import {
   Card,
   CardBody,
@@ -334,7 +335,7 @@ componentDidMount() {
       headers: Header,
     })
       .then(data => {
-        //console.log(data.data)
+        console.log(data.data)
         this.setState({
           results: data.data,
           loading: true,
@@ -422,7 +423,12 @@ componentDidMount() {
         console.log(err);
       });
   }
-  
+  handleStartDate = (e,v)=>{
+    this.setState({
+        startDate:e,
+        date:v
+    })
+}
   render() {
     let stateHeadDivision = this.state.stateHeadDivision.map(function (division) {
       return { value: division.username, label: division.profile.firstname + " " + division.profile.lastname };
@@ -543,7 +549,7 @@ componentDidMount() {
           <InputGroup className="mb-3">
           <Input type="text" onChange={this.handleName} placeholder="Name" autoComplete="Name" />
           </InputGroup>
-          
+                                            
           CheckIn
           <InputGroup className="mb-3">
           <Input type="datetime-local" onChange={this.handleCheckIn}  />

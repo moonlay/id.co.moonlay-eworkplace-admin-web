@@ -26,8 +26,13 @@ const ListSick = React.lazy(() => import('./views/Pages/Absensi/Sick/ListSick'))
 const ListDivision = React.lazy(() => import('./views/Pages/Division/ListDivision'));
 const ListJobtitle = React.lazy(() => import('./views/Pages/Jobtitle/ListJobtitle'));
 const ListRole = React.lazy(() => import('./views/Pages/Role/ListRole'));
-const TestLur = React.lazy(() => import('./views/Pages/Test/index'));
-
+const TestLur = React.lazy(() => import('./views/Pages/Test/Coba'));
+const ProjectList = React.lazy(()=>import('./views/Pages/ProjectList/ProjectList'));
+const Percobaan = React.lazy(()=>import('./views/Pages/DetailsProject/DetailProject'));
+const DetailProject = React.lazy(()=>import('./views/Pages/DetailsProject/DetailProject'));
+const TimeSheet = React.lazy(()=>import('./views/Pages/TimeSheet/Dashboard/Report'));
+const AddNewTask = React.lazy(()=>import('./views/Pages/TimeSheet/AddNewTask/AddNewTask'));
+const DetailTask = React.lazy(()=>import('./views/Pages/DetailTask/DetailTask'));
 class App extends Component {
 
   render() {
@@ -47,12 +52,19 @@ class App extends Component {
             
             <Route exact path="/division/listdivision" name="List Division Page" render={props => <ListDivision {...props}/>} />
             <Route exact path="/jobtitle/listjobtitle" name="List Division Page" render={props => <ListJobtitle {...props}/>} />
+            {/* <Route exact path="/jobtitle/Try" name="List Division Page" render={props => <TryMenu {...props}/>} /> */}
             <Route exact path="/role/listrole" name="List Division Page" render={props => <ListRole {...props}/>} />
-            
+          {/*Route for report */}
+            <Route exact path="/TimeSheet/Report" name="Report TimeSheet" render={props=><TimeSheet {...props}/>}/>
+            <Route exact path="/Addnew/AddnewTask" name ="AddnewTask" render={props => <AddNewTask {...props}/>}/>
+            <Route  path="/Addnew/AddnewTask/:id/:taskid" render={(props)=><DetailTask {...props} />}/>
+          {/*End Route */}
+
             {/* <Route exact path="/account/editaccount/:id" name="Edit Account Page" render={props => <Editaccount {...props}/>} /> */}
             <Route exact path="/account/listaccount" name="List Account Page" render={props => <ListAccount {...props}/>} />
             <Route exact path="/account/addaccount" name="Add Account Page" render={props => <AddAccount {...props}/>} />
-              
+            <Route exact path="/ProjectList/Project" name="Add Account Page" render={props => <ProjectList {...props}/>} />
+            <Route path="/ProjectList/Project/:id" render={props => <DetailProject {...props}/> } />
               <Route exact path="/login" name="Login Page" render={props => <Login {...props}/>} />
               <Route exact path="/register" name="Register Page" render={props => <Register {...props}/>} />
               <Route exact path="/404" name="Page 404" render={props => <Page404 {...props}/>} />

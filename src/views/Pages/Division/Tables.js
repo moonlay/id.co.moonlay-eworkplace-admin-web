@@ -269,7 +269,7 @@ class Tables extends Component {
           id={number}
           onClick={this.handleClick}
           className="page-link">
-          {number}
+          {/* {number} */}
         </li>
       );
     });

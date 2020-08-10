@@ -8,7 +8,20 @@ export const urlDivision = 'https://eworkmoonlay-core-dev.azurewebsites.net/v1/d
 export const urlJobtitle = 'https://eworkmoonlay-core-dev.azurewebsites.net/v1/job-titles';
 export const urlRole = 'https://eworkmoonlay-user-dev.azurewebsites.net/v1/roles';
 export const urlMe = 'https://eworkmoonlay-user-dev.azurewebsites.net/v1/me'
-
+//dari sini
+export const urlProject = 'https://eworkmoonlay-absen-dev.azurewebsites.net/v1/Projects';
+export const urlActiviyCategory = 'https://eworkmoonlay-absen-dev.azurewebsites.net/v1/ActivityCategory';
+export const urlActivity = 'https://eworkmoonlay-absen-dev.azurewebsites.net/v1/Activity';
+export const urlReport = 'https://eworkmoonlay-absen-dev.azurewebsites.net/v1/Reports';
+export const urlTimeSheet = 'https://eworkmoonlay-absen-dev.azurewebsites.net/v1/TimeSheet';
+export const urlTaskManagement = 'https://eworkmoonlay-absen-dev.azurewebsites.net/v1/Task';
+//Sampe sini udah APi kami
+export const urlFamilyData = 'https://345f28ad2886.ngrok.io/v1/familydata';
+export const urlContact = 'https://345f28ad2886.ngrok.io/v1/familydata/emergencyContact';
+export const urlInformalEducationData = 'https://345f28ad2886.ngrok.io/v1/informaleducation';
+export const urlWorkingExperienceData = 'https://345f28ad2886.ngrok.io/v1/workingExperience';
+export const urlAssets = 'https://345f28ad2886.ngrok.io/v1/assets';
+export const urlAccount = 'https://345f28ad2886.ngrok.io/v1/accountprofile';
   export const appovedList = [
     { value: 'Pending', label: 'Pending' },
     { value: 'Approved', label: 'Approved' },

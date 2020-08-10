@@ -1,0 +1,4 @@
+.rdp-overlay .rdp-popover .show{
+
+    transform: translate3d(256px, 38px, 0px);
+}

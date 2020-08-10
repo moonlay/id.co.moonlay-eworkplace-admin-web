@@ -9,7 +9,7 @@ import {
   Button,
   Form, Input, InputGroup, InputGroupAddon, InputGroupText,
 } from 'reactstrap';
-
+import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 //import moment from 'moment'
 import {urlAbsen} from '../../../../Constant'
 import Modal from "react-bootstrap/Modal";
@@ -489,6 +489,15 @@ class Tables extends Component {
           )}
         </div>
         <ul className="pagination">{renderPageNumbers}</ul>
+        <div>
+          <ReactHTMLTableToExcel 
+          className="btn btn-info"
+          table="myTable"
+          filename="ReportAtOffice"
+          sheet="Sheet"
+          buttonText="Export To Excel"
+          />
+        </div>
       </div>
     );
   }

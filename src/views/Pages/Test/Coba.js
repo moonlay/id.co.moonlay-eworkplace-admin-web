@@ -30,10 +30,11 @@ const DefaultHeader = React.lazy(() =>
   import('../../../containers/DefaultLayout/DefaultHeader')
 );
 
-class ListDivision extends Component {
+
+
+class editacc extends Component {
   loading = () => (
     <div className="animated fadeIn pt-1 text-center">Loading...</div>
-    
   );
 
   signOut(e) {
@@ -73,7 +74,7 @@ class ListDivision extends Component {
             <Container fluid>
               <Suspense fallback={this.loading()}>
                 <Tables />
-                { <Switch>
+                <Switch>
                   {routes.map((route, idx) => {
                     return route.component ? (
                       <Route
@@ -87,7 +88,7 @@ class ListDivision extends Component {
                   })}
 
                  
-                </Switch> }
+                </Switch>
               </Suspense>
             </Container>
           </main>
@@ -107,4 +108,4 @@ class ListDivision extends Component {
   }
 }
 
-export default ListDivision;
+export default editacc;
